@@ -1,0 +1,409 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ShopModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="ShopEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="client" EntityType="ShopModel.client" />
+    <EntitySet Name="compukter" EntityType="ShopModel.compukter" />
+    <EntitySet Name="corpus" EntityType="ShopModel.corpus" />
+    <EntitySet Name="Employee" EntityType="ShopModel.Employee" />
+    <EntitySet Name="hard_drive" EntityType="ShopModel.hard_drive" />
+    <EntitySet Name="mother" EntityType="ShopModel.mother" />
+    <EntitySet Name="order" EntityType="ShopModel.order" />
+    <EntitySet Name="order_items" EntityType="ShopModel.order_items" />
+    <EntitySet Name="power" EntityType="ShopModel.power" />
+    <EntitySet Name="processor" EntityType="ShopModel.processor" />
+    <EntitySet Name="ram" EntityType="ShopModel.ram" />
+    <EntitySet Name="socket" EntityType="ShopModel.socket" />
+    <EntitySet Name="sysdiagrams" EntityType="ShopModel.sysdiagrams" />
+    <EntitySet Name="videoadapter" EntityType="ShopModel.videoadapter" />
+    <AssociationSet Name="FK_order_client" Association="ShopModel.FK_order_client">
+      <End Role="client" EntitySet="client" />
+      <End Role="order" EntitySet="order" />
+    </AssociationSet>
+    <AssociationSet Name="FK_compukter_corpus" Association="ShopModel.FK_compukter_corpus">
+      <End Role="corpus" EntitySet="corpus" />
+      <End Role="compukter" EntitySet="compukter" />
+    </AssociationSet>
+    <AssociationSet Name="FK_compukter_Employee" Association="ShopModel.FK_compukter_Employee">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="compukter" EntitySet="compukter" />
+    </AssociationSet>
+    <AssociationSet Name="FK_compukter_hard_drive" Association="ShopModel.FK_compukter_hard_drive">
+      <End Role="hard_drive" EntitySet="hard_drive" />
+      <End Role="compukter" EntitySet="compukter" />
+    </AssociationSet>
+    <AssociationSet Name="FK_compukter_mother" Association="ShopModel.FK_compukter_mother">
+      <End Role="mother" EntitySet="mother" />
+      <End Role="compukter" EntitySet="compukter" />
+    </AssociationSet>
+    <AssociationSet Name="FK_compukter_power" Association="ShopModel.FK_compukter_power">
+      <End Role="power" EntitySet="power" />
+      <End Role="compukter" EntitySet="compukter" />
+    </AssociationSet>
+    <AssociationSet Name="FK_compukter_processor" Association="ShopModel.FK_compukter_processor">
+      <End Role="processor" EntitySet="processor" />
+      <End Role="compukter" EntitySet="compukter" />
+    </AssociationSet>
+    <AssociationSet Name="FK_compukter_ram" Association="ShopModel.FK_compukter_ram">
+      <End Role="ram" EntitySet="ram" />
+      <End Role="compukter" EntitySet="compukter" />
+    </AssociationSet>
+    <AssociationSet Name="FK_compukter_videoadapter" Association="ShopModel.FK_compukter_videoadapter">
+      <End Role="videoadapter" EntitySet="videoadapter" />
+      <End Role="compukter" EntitySet="compukter" />
+    </AssociationSet>
+    <AssociationSet Name="FK_order_Employee" Association="ShopModel.FK_order_Employee">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="order" EntitySet="order" />
+    </AssociationSet>
+    <AssociationSet Name="FK_mother_socket" Association="ShopModel.FK_mother_socket">
+      <End Role="socket" EntitySet="socket" />
+      <End Role="mother" EntitySet="mother" />
+    </AssociationSet>
+    <AssociationSet Name="FK_order_items_order" Association="ShopModel.FK_order_items_order">
+      <End Role="order" EntitySet="order" />
+      <End Role="order_items" EntitySet="order_items" />
+    </AssociationSet>
+    <AssociationSet Name="FK_processor_socket" Association="ShopModel.FK_processor_socket">
+      <End Role="socket" EntitySet="socket" />
+      <End Role="processor" EntitySet="processor" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="client">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="phone" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="email" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="order" Relationship="ShopModel.FK_order_client" FromRole="client" ToRole="order" />
+  </EntityType>
+  <EntityType Name="compukter">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="desc" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="price" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="instock" Type="Boolean" />
+    <Property Name="photo" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+    <Property Name="id_processor" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="id_mother" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="id_videoadapter" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="id_power" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="id_hard_drive" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="id_ram" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="id_corpus" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="id_employee" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="count" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="corpus" Relationship="ShopModel.FK_compukter_corpus" FromRole="compukter" ToRole="corpus" />
+    <NavigationProperty Name="Employee" Relationship="ShopModel.FK_compukter_Employee" FromRole="compukter" ToRole="Employee" />
+    <NavigationProperty Name="hard_drive" Relationship="ShopModel.FK_compukter_hard_drive" FromRole="compukter" ToRole="hard_drive" />
+    <NavigationProperty Name="mother" Relationship="ShopModel.FK_compukter_mother" FromRole="compukter" ToRole="mother" />
+    <NavigationProperty Name="power" Relationship="ShopModel.FK_compukter_power" FromRole="compukter" ToRole="power" />
+    <NavigationProperty Name="processor" Relationship="ShopModel.FK_compukter_processor" FromRole="compukter" ToRole="processor" />
+    <NavigationProperty Name="ram" Relationship="ShopModel.FK_compukter_ram" FromRole="compukter" ToRole="ram" />
+    <NavigationProperty Name="videoadapter" Relationship="ShopModel.FK_compukter_videoadapter" FromRole="compukter" ToRole="videoadapter" />
+  </EntityType>
+  <EntityType Name="corpus">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="price" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="color" Type="Int32" Nullable="false" />
+    <Property Name="formfactor" Type="Int32" Nullable="false" />
+    <Property Name="count" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="compukter" Relationship="ShopModel.FK_compukter_corpus" FromRole="corpus" ToRole="compukter" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="login" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="role" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="compukter" Relationship="ShopModel.FK_compukter_Employee" FromRole="Employee" ToRole="compukter" />
+    <NavigationProperty Name="order" Relationship="ShopModel.FK_order_Employee" FromRole="Employee" ToRole="order" />
+  </EntityType>
+  <EntityType Name="hard_drive">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="price" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="storage" Type="Int32" Nullable="false" />
+    <Property Name="type" Type="Int32" Nullable="false" />
+    <Property Name="count" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="compukter" Relationship="ShopModel.FK_compukter_hard_drive" FromRole="hard_drive" ToRole="compukter" />
+  </EntityType>
+  <EntityType Name="mother">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="id_socket" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="freeze" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="price" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="count" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="compukter" Relationship="ShopModel.FK_compukter_mother" FromRole="mother" ToRole="compukter" />
+    <NavigationProperty Name="socket" Relationship="ShopModel.FK_mother_socket" FromRole="mother" ToRole="socket" />
+  </EntityType>
+  <EntityType Name="order">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="id_employee" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="cost" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="id_client" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="status" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="client" Relationship="ShopModel.FK_order_client" FromRole="order" ToRole="client" />
+    <NavigationProperty Name="Employee" Relationship="ShopModel.FK_order_Employee" FromRole="order" ToRole="Employee" />
+    <NavigationProperty Name="order_items" Relationship="ShopModel.FK_order_items_order" FromRole="order" ToRole="order_items" />
+  </EntityType>
+  <EntityType Name="order_items">
+    <Key>
+      <PropertyRef Name="id_item" />
+      <PropertyRef Name="id_order" />
+    </Key>
+    <Property Name="id_item" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="id_order" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="count" Type="Int32" Nullable="false" />
+    <Property Name="type" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="order" Relationship="ShopModel.FK_order_items_order" FromRole="order_items" ToRole="order" />
+  </EntityType>
+  <EntityType Name="power">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="price" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="power1" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="count" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="compukter" Relationship="ShopModel.FK_compukter_power" FromRole="power" ToRole="compukter" />
+  </EntityType>
+  <EntityType Name="processor">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="frequency" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="cache_1" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="cache_2" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="cache_3" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="id_socket" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="price" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="count" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="compukter" Relationship="ShopModel.FK_compukter_processor" FromRole="processor" ToRole="compukter" />
+    <NavigationProperty Name="socket" Relationship="ShopModel.FK_processor_socket" FromRole="processor" ToRole="socket" />
+  </EntityType>
+  <EntityType Name="ram">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="price" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="storage" Type="Int32" Nullable="false" />
+    <Property Name="type" Type="Int32" Nullable="false" />
+    <Property Name="count" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="compukter" Relationship="ShopModel.FK_compukter_ram" FromRole="ram" ToRole="compukter" />
+  </EntityType>
+  <EntityType Name="socket">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="mother" Relationship="ShopModel.FK_mother_socket" FromRole="socket" ToRole="mother" />
+    <NavigationProperty Name="processor" Relationship="ShopModel.FK_processor_socket" FromRole="socket" ToRole="processor" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="videoadapter">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="price" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="video_memory" Type="Int32" Nullable="false" />
+    <Property Name="type" Type="Int32" Nullable="false" />
+    <Property Name="count" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="compukter" Relationship="ShopModel.FK_compukter_videoadapter" FromRole="videoadapter" ToRole="compukter" />
+  </EntityType>
+  <Association Name="FK_order_client">
+    <End Type="ShopModel.client" Role="client" Multiplicity="0..1" />
+    <End Type="ShopModel.order" Role="order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="client">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="order">
+        <PropertyRef Name="id_client" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_compukter_corpus">
+    <End Type="ShopModel.corpus" Role="corpus" Multiplicity="1" />
+    <End Type="ShopModel.compukter" Role="compukter" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="corpus">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="compukter">
+        <PropertyRef Name="id_corpus" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_compukter_Employee">
+    <End Type="ShopModel.Employee" Role="Employee" Multiplicity="1" />
+    <End Type="ShopModel.compukter" Role="compukter" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="compukter">
+        <PropertyRef Name="id_employee" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_compukter_hard_drive">
+    <End Type="ShopModel.hard_drive" Role="hard_drive" Multiplicity="1" />
+    <End Type="ShopModel.compukter" Role="compukter" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="hard_drive">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="compukter">
+        <PropertyRef Name="id_hard_drive" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_compukter_mother">
+    <End Type="ShopModel.mother" Role="mother" Multiplicity="1" />
+    <End Type="ShopModel.compukter" Role="compukter" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mother">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="compukter">
+        <PropertyRef Name="id_mother" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_compukter_power">
+    <End Type="ShopModel.power" Role="power" Multiplicity="1" />
+    <End Type="ShopModel.compukter" Role="compukter" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="power">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="compukter">
+        <PropertyRef Name="id_power" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_compukter_processor">
+    <End Type="ShopModel.processor" Role="processor" Multiplicity="1" />
+    <End Type="ShopModel.compukter" Role="compukter" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="processor">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="compukter">
+        <PropertyRef Name="id_processor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_compukter_ram">
+    <End Type="ShopModel.ram" Role="ram" Multiplicity="1" />
+    <End Type="ShopModel.compukter" Role="compukter" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ram">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="compukter">
+        <PropertyRef Name="id_ram" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_compukter_videoadapter">
+    <End Type="ShopModel.videoadapter" Role="videoadapter" Multiplicity="0..1" />
+    <End Type="ShopModel.compukter" Role="compukter" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="videoadapter">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="compukter">
+        <PropertyRef Name="id_videoadapter" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_order_Employee">
+    <End Type="ShopModel.Employee" Role="Employee" Multiplicity="1" />
+    <End Type="ShopModel.order" Role="order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="order">
+        <PropertyRef Name="id_employee" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_mother_socket">
+    <End Type="ShopModel.socket" Role="socket" Multiplicity="1" />
+    <End Type="ShopModel.mother" Role="mother" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="socket">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="mother">
+        <PropertyRef Name="id_socket" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_order_items_order">
+    <End Type="ShopModel.order" Role="order" Multiplicity="1" />
+    <End Type="ShopModel.order_items" Role="order_items" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="order">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="order_items">
+        <PropertyRef Name="id_order" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_processor_socket">
+    <End Type="ShopModel.socket" Role="socket" Multiplicity="1" />
+    <End Type="ShopModel.processor" Role="processor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="socket">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="processor">
+        <PropertyRef Name="id_socket" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

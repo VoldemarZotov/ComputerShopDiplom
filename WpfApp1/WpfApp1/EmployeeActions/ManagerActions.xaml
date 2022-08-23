@@ -1,0 +1,151 @@
+﻿<Window x:Class="WpfApp1.EmployeeActions.ManagerActions"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1.EmployeeActions"
+        mc:Ignorable="d"
+        Title="Действия менеджера" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="8*"/>
+        </Grid.RowDefinitions>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Text="Магазин компьютеров"
+                       VerticalAlignment="Center"
+                       Margin="10"/>
+
+            <TextBlock Text="Выберите дейтсвие"
+                       Grid.Column="1"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"/>
+
+            <TextBlock Text="Сотрудник: "
+                       Name="empTextBlock"
+                       Grid.Column="2"
+                       HorizontalAlignment="Right"
+                       VerticalAlignment="Center"
+                       Margin="10"/>
+
+            <Separator Grid.ColumnSpan="3"
+                       VerticalAlignment="Bottom"
+                       Margin="10, 0, 10, 0"/>
+
+        </Grid>
+        <WrapPanel 
+            VerticalAlignment="Top"
+            Orientation="Horizontal" 
+            Grid.Row="1">
+
+            <Button Width="100" 
+                    Height="70"
+                    Margin="20"
+                    Name="compucterButton"
+                    Click="compucterButton_Click">
+                <TextBlock Text="Управление компьютерами"
+                           TextWrapping="WrapWithOverflow"
+                           TextAlignment="Center"/>
+            </Button>
+
+            <Button Width="100" 
+                    Height="70"
+                    Margin="20"
+                    Name="processorButton"
+                    Click="processorButton_Click">
+                <TextBlock Text="Управление процессорами"
+                           TextWrapping="WrapWithOverflow"
+                           TextAlignment="Center"/>
+            </Button>
+
+            <Button Width="100" 
+                    Height="70"
+                    Margin="20"
+                    Name="motherButton"
+                    Click="motherButton_Click">
+                <TextBlock Text="Управление материнскими платами"
+                           TextWrapping="WrapWithOverflow"
+                           TextAlignment="Center"/>
+            </Button>
+
+            <Button Width="100" 
+                    Height="70"
+                    Margin="20"
+                    Name="vidioadapterButton"
+                    Click="vidioadapterButton_Click">
+                <TextBlock Text="Управление видеокартами"
+                           TextWrapping="WrapWithOverflow"
+                           TextAlignment="Center"/>
+            </Button>
+
+            <Button Width="100" 
+                    Height="70"
+                    Margin="20"
+                    Name="hardDriveButton" 
+                    Click="hardDriveButton_Click">
+                <TextBlock Text="Управление накопителями"
+                           TextWrapping="WrapWithOverflow"
+                           TextAlignment="Center"/>
+            </Button>
+
+            <Button Width="100" 
+                    Height="70"
+                    Margin="20"
+                    Name="ramButton"
+                    Click="ramButton_Click">
+                <TextBlock Text="Управление оперативной памяти"
+                           TextWrapping="WrapWithOverflow"
+                           TextAlignment="Center"/>
+            </Button>
+
+
+            <Button Width="100" 
+                    Height="70"
+                    Margin="20"
+                    Name="corpusButton" 
+                    Click="corpusButton_Click">
+                <TextBlock Text="Управление корпусами"
+                           TextWrapping="WrapWithOverflow"
+                           TextAlignment="Center"/>
+
+            </Button>
+
+
+            <Button Width="100" 
+                    Height="70"
+                    Margin="20"
+                    Name="powerButton" Click="powerButton_Click">
+                <TextBlock Text="Управление блоками  питания"
+                           TextWrapping="WrapWithOverflow"
+                           TextAlignment="Center"/>
+            </Button>
+
+            <Button Width="100" 
+                    Height="70"
+                    Margin="20"
+                    Click="socketButton_Click"
+                    Name="socketButton">
+                <TextBlock Text="Управление сокетами"
+                           TextWrapping="WrapWithOverflow"
+                           TextAlignment="Center"/>
+            </Button>
+
+            <Button Width="100" 
+                    Height="70"
+                    Margin="20"
+                    Click="ordersButton_Click"
+                    Name="ordersButton">
+                <TextBlock Text="Управление заказами"
+                           TextWrapping="WrapWithOverflow"
+                           TextAlignment="Center"/>
+            </Button>
+
+        </WrapPanel>
+    </Grid>
+</Window>

@@ -1,0 +1,6 @@
+C:\Users\Лаптев\Desktop\WPF\WpfApp1\ComputerLibrary\bin\Debug\ComputerLibrary.dll
+C:\Users\Лаптев\Desktop\WPF\WpfApp1\ComputerLibrary\bin\Debug\ComputerLibrary.pdb
+C:\Users\Лаптев\Desktop\WPF\WpfApp1\ComputerLibrary\obj\Debug\ComputerLibrary.csprojAssemblyReference.cache
+C:\Users\Лаптев\Desktop\WPF\WpfApp1\ComputerLibrary\obj\Debug\ComputerLibrary.csproj.CoreCompileInputs.cache
+C:\Users\Лаптев\Desktop\WPF\WpfApp1\ComputerLibrary\obj\Debug\ComputerLibrary.dll
+C:\Users\Лаптев\Desktop\WPF\WpfApp1\ComputerLibrary\obj\Debug\ComputerLibrary.pdb

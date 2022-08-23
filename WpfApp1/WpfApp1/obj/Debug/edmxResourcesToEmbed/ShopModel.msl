@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище ShopModelContainer" CdmEntityContainer="ShopEntities">
+    <EntitySetMapping Name="client">
+      <EntityTypeMapping TypeName="ShopModel.client">
+        <MappingFragment StoreEntitySet="client">
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="compukter">
+      <EntityTypeMapping TypeName="ShopModel.compukter">
+        <MappingFragment StoreEntitySet="compukter">
+          <ScalarProperty Name="count" ColumnName="count" />
+          <ScalarProperty Name="id_employee" ColumnName="id_employee" />
+          <ScalarProperty Name="id_corpus" ColumnName="id_corpus" />
+          <ScalarProperty Name="id_ram" ColumnName="id_ram" />
+          <ScalarProperty Name="id_hard_drive" ColumnName="id_hard_drive" />
+          <ScalarProperty Name="id_power" ColumnName="id_power" />
+          <ScalarProperty Name="id_videoadapter" ColumnName="id_videoadapter" />
+          <ScalarProperty Name="id_mother" ColumnName="id_mother" />
+          <ScalarProperty Name="id_processor" ColumnName="id_processor" />
+          <ScalarProperty Name="photo" ColumnName="photo" />
+          <ScalarProperty Name="instock" ColumnName="instock" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="desc" ColumnName="desc" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="corpus">
+      <EntityTypeMapping TypeName="ShopModel.corpus">
+        <MappingFragment StoreEntitySet="corpus">
+          <ScalarProperty Name="count" ColumnName="count" />
+          <ScalarProperty Name="formfactor" ColumnName="formfactor" />
+          <ScalarProperty Name="color" ColumnName="color" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employee">
+      <EntityTypeMapping TypeName="ShopModel.Employee">
+        <MappingFragment StoreEntitySet="Employee">
+          <ScalarProperty Name="role" ColumnName="role" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="login" ColumnName="login" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="hard_drive">
+      <EntityTypeMapping TypeName="ShopModel.hard_drive">
+        <MappingFragment StoreEntitySet="hard_drive">
+          <ScalarProperty Name="count" ColumnName="count" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="storage" ColumnName="storage" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mother">
+      <EntityTypeMapping TypeName="ShopModel.mother">
+        <MappingFragment StoreEntitySet="mother">
+          <ScalarProperty Name="count" ColumnName="count" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="freeze" ColumnName="freeze" />
+          <ScalarProperty Name="id_socket" ColumnName="id_socket" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="order">
+      <EntityTypeMapping TypeName="ShopModel.order">
+        <MappingFragment StoreEntitySet="order">
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="id_client" ColumnName="id_client" />
+          <ScalarProperty Name="cost" ColumnName="cost" />
+          <ScalarProperty Name="id_employee" ColumnName="id_employee" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="order_items">
+      <EntityTypeMapping TypeName="ShopModel.order_items">
+        <MappingFragment StoreEntitySet="order_items">
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="count" ColumnName="count" />
+          <ScalarProperty Name="id_order" ColumnName="id_order" />
+          <ScalarProperty Name="id_item" ColumnName="id_item" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="power">
+      <EntityTypeMapping TypeName="ShopModel.power">
+        <MappingFragment StoreEntitySet="power">
+          <ScalarProperty Name="count" ColumnName="count" />
+          <ScalarProperty Name="power1" ColumnName="power1" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="processor">
+      <EntityTypeMapping TypeName="ShopModel.processor">
+        <MappingFragment StoreEntitySet="processor">
+          <ScalarProperty Name="count" ColumnName="count" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="id_socket" ColumnName="id_socket" />
+          <ScalarProperty Name="cache_3" ColumnName="cache_3" />
+          <ScalarProperty Name="cache_2" ColumnName="cache_2" />
+          <ScalarProperty Name="cache_1" ColumnName="cache_1" />
+          <ScalarProperty Name="frequency" ColumnName="frequency" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ram">
+      <EntityTypeMapping TypeName="ShopModel.ram">
+        <MappingFragment StoreEntitySet="ram">
+          <ScalarProperty Name="count" ColumnName="count" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="storage" ColumnName="storage" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="socket">
+      <EntityTypeMapping TypeName="ShopModel.socket">
+        <MappingFragment StoreEntitySet="socket">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="ShopModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="definition" ColumnName="definition" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="videoadapter">
+      <EntityTypeMapping TypeName="ShopModel.videoadapter">
+        <MappingFragment StoreEntitySet="videoadapter">
+          <ScalarProperty Name="count" ColumnName="count" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="video_memory" ColumnName="video_memory" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

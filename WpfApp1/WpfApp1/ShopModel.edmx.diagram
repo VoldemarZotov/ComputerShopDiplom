@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="7fcb98da0c7d444a8234551d07a66ea7" Name="Diagram1">
+        <EntityTypeShape EntityType="ShopModel.client" Width="1.5" PointX="3" PointY="0.75" />
+        <EntityTypeShape EntityType="ShopModel.compukter" Width="1.5" PointX="5.25" PointY="4.875" />
+        <EntityTypeShape EntityType="ShopModel.corpus" Width="1.5" PointX="3" PointY="27.875" />
+        <EntityTypeShape EntityType="ShopModel.Employee" Width="1.5" PointX="3" PointY="15.5" />
+        <EntityTypeShape EntityType="ShopModel.hard_drive" Width="1.5" PointX="3" PointY="12.5" />
+        <EntityTypeShape EntityType="ShopModel.mother" Width="1.5" PointX="3" PointY="4.375" />
+        <EntityTypeShape EntityType="ShopModel.order" Width="1.5" PointX="5.25" PointY="15.375" />
+        <EntityTypeShape EntityType="ShopModel.order_items" Width="1.5" PointX="7.5" PointY="15.75" />
+        <EntityTypeShape EntityType="ShopModel.power" Width="1.5" PointX="3" PointY="18.625" />
+        <EntityTypeShape EntityType="ShopModel.processor" Width="1.5" PointX="3" PointY="7.625" />
+        <EntityTypeShape EntityType="ShopModel.ram" Width="1.5" PointX="3" PointY="21.625" />
+        <EntityTypeShape EntityType="ShopModel.socket" Width="1.5" PointX="0.75" PointY="6.625" />
+        <EntityTypeShape EntityType="ShopModel.sysdiagrams" Width="1.5" PointX="7.75" PointY="2.375" />
+        <EntityTypeShape EntityType="ShopModel.videoadapter" Width="1.5" PointX="3" PointY="24.75" />
+        <AssociationConnector Association="ShopModel.FK_order_client" />
+        <AssociationConnector Association="ShopModel.FK_compukter_corpus" />
+        <AssociationConnector Association="ShopModel.FK_compukter_Employee" />
+        <AssociationConnector Association="ShopModel.FK_compukter_hard_drive" />
+        <AssociationConnector Association="ShopModel.FK_compukter_mother" />
+        <AssociationConnector Association="ShopModel.FK_compukter_power" />
+        <AssociationConnector Association="ShopModel.FK_compukter_processor" />
+        <AssociationConnector Association="ShopModel.FK_compukter_ram" />
+        <AssociationConnector Association="ShopModel.FK_compukter_videoadapter" />
+        <AssociationConnector Association="ShopModel.FK_order_Employee" />
+        <AssociationConnector Association="ShopModel.FK_mother_socket" />
+        <AssociationConnector Association="ShopModel.FK_order_items_order" />
+        <AssociationConnector Association="ShopModel.FK_processor_socket" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

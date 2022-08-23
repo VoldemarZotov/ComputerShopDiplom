@@ -1,0 +1,383 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище ShopModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="client">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="phone" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="email" Type="nvarchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityType Name="compukter">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="desc" Type="nvarchar" MaxLength="500" />
+    <Property Name="price" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="instock" Type="bit" />
+    <Property Name="photo" Type="varbinary(max)" Nullable="false" />
+    <Property Name="id_processor" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="id_mother" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="id_videoadapter" Type="nvarchar" MaxLength="50" />
+    <Property Name="id_power" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="id_hard_drive" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="id_ram" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="id_corpus" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="id_employee" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="count" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="corpus">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="price" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="color" Type="int" Nullable="false" />
+    <Property Name="formfactor" Type="int" Nullable="false" />
+    <Property Name="count" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="login" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="password" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="role" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="hard_drive">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="price" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="storage" Type="int" Nullable="false" />
+    <Property Name="type" Type="int" Nullable="false" />
+    <Property Name="count" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="mother">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="id_socket" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="freeze" Type="nvarchar" MaxLength="50" />
+    <Property Name="price" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="count" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="order">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="id_employee" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="cost" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="id_client" Type="nvarchar" MaxLength="50" />
+    <Property Name="date" Type="datetime" Nullable="false" />
+    <Property Name="status" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="order_items">
+    <Key>
+      <PropertyRef Name="id_item" />
+      <PropertyRef Name="id_order" />
+    </Key>
+    <Property Name="id_item" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="id_order" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="count" Type="int" Nullable="false" />
+    <Property Name="type" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="power">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="price" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="power1" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="count" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="processor">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="frequency" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="cache_1" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="cache_2" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="cache_3" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="id_socket" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="price" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="count" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ram">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="price" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="storage" Type="int" Nullable="false" />
+    <Property Name="type" Type="int" Nullable="false" />
+    <Property Name="count" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="socket">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="videoadapter">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="price" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="video_memory" Type="int" Nullable="false" />
+    <Property Name="type" Type="int" Nullable="false" />
+    <Property Name="count" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_compukter_corpus">
+    <End Role="corpus" Type="Self.corpus" Multiplicity="1" />
+    <End Role="compukter" Type="Self.compukter" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="corpus">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="compukter">
+        <PropertyRef Name="id_corpus" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_compukter_Employee">
+    <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
+    <End Role="compukter" Type="Self.compukter" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="compukter">
+        <PropertyRef Name="id_employee" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_compukter_hard_drive">
+    <End Role="hard_drive" Type="Self.hard_drive" Multiplicity="1" />
+    <End Role="compukter" Type="Self.compukter" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="hard_drive">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="compukter">
+        <PropertyRef Name="id_hard_drive" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_compukter_mother">
+    <End Role="mother" Type="Self.mother" Multiplicity="1" />
+    <End Role="compukter" Type="Self.compukter" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mother">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="compukter">
+        <PropertyRef Name="id_mother" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_compukter_power">
+    <End Role="power" Type="Self.power" Multiplicity="1" />
+    <End Role="compukter" Type="Self.compukter" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="power">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="compukter">
+        <PropertyRef Name="id_power" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_compukter_processor">
+    <End Role="processor" Type="Self.processor" Multiplicity="1" />
+    <End Role="compukter" Type="Self.compukter" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="processor">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="compukter">
+        <PropertyRef Name="id_processor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_compukter_ram">
+    <End Role="ram" Type="Self.ram" Multiplicity="1" />
+    <End Role="compukter" Type="Self.compukter" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ram">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="compukter">
+        <PropertyRef Name="id_ram" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_compukter_videoadapter">
+    <End Role="videoadapter" Type="Self.videoadapter" Multiplicity="0..1" />
+    <End Role="compukter" Type="Self.compukter" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="videoadapter">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="compukter">
+        <PropertyRef Name="id_videoadapter" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_mother_socket">
+    <End Role="socket" Type="Self.socket" Multiplicity="1" />
+    <End Role="mother" Type="Self.mother" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="socket">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="mother">
+        <PropertyRef Name="id_socket" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_order_client">
+    <End Role="client" Type="Self.client" Multiplicity="0..1" />
+    <End Role="order" Type="Self.order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="client">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="order">
+        <PropertyRef Name="id_client" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_order_Employee">
+    <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
+    <End Role="order" Type="Self.order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="order">
+        <PropertyRef Name="id_employee" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_order_items_order">
+    <End Role="order" Type="Self.order" Multiplicity="1" />
+    <End Role="order_items" Type="Self.order_items" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="order">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="order_items">
+        <PropertyRef Name="id_order" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_processor_socket">
+    <End Role="socket" Type="Self.socket" Multiplicity="1" />
+    <End Role="processor" Type="Self.processor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="socket">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="processor">
+        <PropertyRef Name="id_socket" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Хранилище ShopModelContainer">
+    <EntitySet Name="client" EntityType="Self.client" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="compukter" EntityType="Self.compukter" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="corpus" EntityType="Self.corpus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="hard_drive" EntityType="Self.hard_drive" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mother" EntityType="Self.mother" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="order" EntityType="Self.order" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="order_items" EntityType="Self.order_items" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="power" EntityType="Self.power" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="processor" EntityType="Self.processor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ram" EntityType="Self.ram" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="socket" EntityType="Self.socket" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="videoadapter" EntityType="Self.videoadapter" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_compukter_corpus" Association="Self.FK_compukter_corpus">
+      <End Role="corpus" EntitySet="corpus" />
+      <End Role="compukter" EntitySet="compukter" />
+    </AssociationSet>
+    <AssociationSet Name="FK_compukter_Employee" Association="Self.FK_compukter_Employee">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="compukter" EntitySet="compukter" />
+    </AssociationSet>
+    <AssociationSet Name="FK_compukter_hard_drive" Association="Self.FK_compukter_hard_drive">
+      <End Role="hard_drive" EntitySet="hard_drive" />
+      <End Role="compukter" EntitySet="compukter" />
+    </AssociationSet>
+    <AssociationSet Name="FK_compukter_mother" Association="Self.FK_compukter_mother">
+      <End Role="mother" EntitySet="mother" />
+      <End Role="compukter" EntitySet="compukter" />
+    </AssociationSet>
+    <AssociationSet Name="FK_compukter_power" Association="Self.FK_compukter_power">
+      <End Role="power" EntitySet="power" />
+      <End Role="compukter" EntitySet="compukter" />
+    </AssociationSet>
+    <AssociationSet Name="FK_compukter_processor" Association="Self.FK_compukter_processor">
+      <End Role="processor" EntitySet="processor" />
+      <End Role="compukter" EntitySet="compukter" />
+    </AssociationSet>
+    <AssociationSet Name="FK_compukter_ram" Association="Self.FK_compukter_ram">
+      <End Role="ram" EntitySet="ram" />
+      <End Role="compukter" EntitySet="compukter" />
+    </AssociationSet>
+    <AssociationSet Name="FK_compukter_videoadapter" Association="Self.FK_compukter_videoadapter">
+      <End Role="videoadapter" EntitySet="videoadapter" />
+      <End Role="compukter" EntitySet="compukter" />
+    </AssociationSet>
+    <AssociationSet Name="FK_mother_socket" Association="Self.FK_mother_socket">
+      <End Role="socket" EntitySet="socket" />
+      <End Role="mother" EntitySet="mother" />
+    </AssociationSet>
+    <AssociationSet Name="FK_order_client" Association="Self.FK_order_client">
+      <End Role="client" EntitySet="client" />
+      <End Role="order" EntitySet="order" />
+    </AssociationSet>
+    <AssociationSet Name="FK_order_Employee" Association="Self.FK_order_Employee">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="order" EntitySet="order" />
+    </AssociationSet>
+    <AssociationSet Name="FK_order_items_order" Association="Self.FK_order_items_order">
+      <End Role="order" EntitySet="order" />
+      <End Role="order_items" EntitySet="order_items" />
+    </AssociationSet>
+    <AssociationSet Name="FK_processor_socket" Association="Self.FK_processor_socket">
+      <End Role="socket" EntitySet="socket" />
+      <End Role="processor" EntitySet="processor" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

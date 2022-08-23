@@ -1,0 +1,225 @@
+﻿<Window x:Class="WpfApp1.ComputerWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="Компьютеры" 
+        Loaded="Window_Loaded"
+        WindowState="Maximized"
+        Height="600" 
+        Width="700">
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1.8*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+            <ListView Name="listView"
+                  Margin="10" SelectionChanged="listView_SelectionChanged">
+            <ListView.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Удалить"
+                     Click="deleteButton_Click" />
+                </ContextMenu>
+            </ListView.ContextMenu>
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=id}">ID</GridViewColumn>
+                    
+                    <GridViewColumn Header="Фото">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Image Height="100" Source="{Binding Path=photo}" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=name}">Наименование</GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=desc}">Описание</GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=price}">Цена</GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=count}">Количество</GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=processor.name}">Процессор</GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=ram.name}">Оперативная память</GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=mother.name}">Материнская плата</GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=videoadapter.name}">Видеокарта</GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=hard_drive.name}">Жёсткий диск</GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=power.name}">Блок питания</GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=corpus.name}">Корпус</GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Employee.name}">Сотрудники</GridViewColumn>
+                
+                </GridView>
+            </ListView.View>
+
+        </ListView>
+
+        <StackPanel Grid.Row="1"
+                    Orientation="Vertical"
+                    HorizontalAlignment="Left">
+
+            <Button
+                Name="addButton"
+                Width="220"
+                Height="40"
+                Content="Добавить"
+                Margin="10"
+                Click="addButton_Click"/>
+
+            <Button
+                Name="editButton"
+                Width="220"
+                Height="40"
+                Content="Изменить"
+                Margin="10"
+                Click="editButton_Click"/>
+
+            <StackPanel
+                Orientation="Horizontal">
+                
+       
+            <Button Name="exportButton"
+                   Width="100"
+                    Height="40"
+                    Content="Экспорт Excel"
+                    Margin="10"
+                    Click="exportButton_Click"
+                    />
+            
+                <Button Name="exportPdfButton"
+                   Width="100"
+                    Height="40"
+                    Content="Экспорт PDF"
+                    Margin="10"
+                    Click="exportPdfButton_Click"
+                    />
+            </StackPanel>
+        </StackPanel>
+
+        <ScrollViewer Grid.Column="1" 
+                    Grid.RowSpan="2" >
+            
+            <StackPanel >
+
+
+                <TextBlock Text="Цена До"
+                           Margin="10"/>
+
+                <TextBox Name="priceFilterTextBox"
+                         Width="auto"
+                         Height="30"
+                         Margin="10, 0, 10, 10"
+                         TextChanged="priceFilterTextBox_TextChanged"/>
+
+                <TextBlock Text="Наименование"
+                           Margin="10"/>
+
+                <TextBox Name="nameFilterTextBox"
+                         Width="auto"
+                         Height="30"
+                         Margin="10, 0, 10, 10"
+                         TextChanged="nameFilterTextBox_TextChanged"/>
+
+                <TextBlock Text="Процессор"
+                           Margin="10"/>
+
+                <ComboBox Name="processorFilterTextBox"
+                         Width="auto"
+                         Height="30"
+                         Margin="10, 0, 10, 10"
+                          DisplayMemberPath="name"
+                          SelectedValuePath="id"
+                          SelectionChanged="processorFilterTextBox_SelectionChanged"
+                         />
+
+                <TextBlock Text="Материнская плата"
+                           Margin="10"/>
+
+                <ComboBox Name="matherFilterTextBox"
+                         Width="auto"
+                         Height="30"
+                         Margin="10, 0, 10, 10"
+                          DisplayMemberPath="name"
+                          SelectedValuePath="id"
+                          SelectionChanged="matherFilterTextBox_SelectionChanged"
+                         />
+
+                <TextBlock Text="Видеокарта"
+                           Margin="10"/>
+
+                <ComboBox Name="vidioadapterFilterTextBox"
+                         Width="auto"
+                         Height="30"
+                         Margin="10, 0, 10, 10"
+                          DisplayMemberPath="name"
+                          SelectedValuePath="id"
+                          SelectionChanged="vidioadapterFilterTextBox_SelectionChanged"
+                         />
+
+                <TextBlock Text="Оперативная память"
+                           Margin="10"/>
+
+                <ComboBox Name="memoryFilterTextBox"
+                         Width="auto"
+                         Height="30"
+                         Margin="10, 0, 10, 10"
+                          DisplayMemberPath="name"
+                          SelectedValuePath="id"
+                          SelectionChanged="memoryFilterTextBox_SelectionChanged"
+                         />
+
+                <TextBlock Text="Блок питания"
+                           Margin="10"/>
+
+                <ComboBox Name="powerFilterTextBox"
+                         Width="auto"
+                         Height="30"
+                         Margin="10, 0, 10, 10"
+                          DisplayMemberPath="name"
+                          SelectedValuePath="id"
+                          SelectionChanged="powerFilterTextBox_SelectionChanged"
+                         />
+
+                <TextBlock Text="Корпус"
+                           Margin="10"/>
+
+                <ComboBox Name="corpusFilterTextBox"
+                         Width="auto"
+                         Height="30"
+                         Margin="10, 0, 10, 10"
+                          DisplayMemberPath="name"
+                          SelectedValuePath="id"
+                          SelectionChanged="corpusFilterTextBox_SelectionChanged"
+                         />
+
+                <TextBlock Text="Накопитель"
+                           Margin="10"/>
+
+                <ComboBox Name="hardFilterTextBox"
+                         Width="auto"
+                         Height="30"
+                         Margin="10, 0, 10, 10"
+                          DisplayMemberPath="name"
+                          SelectedValuePath="id"
+                          SelectionChanged="hardFilterTextBox_SelectionChanged"
+                         />
+
+                <Button x:Name="clearButton" 
+                        Width="auto"
+                        Height="30"
+                        Margin="10,0,10,10"
+                        Content="Очистить"
+                         Click="clearButton_Click">
+                    
+                </Button>
+
+            </StackPanel>
+
+        </ScrollViewer>
+    </Grid>
+</Window>
